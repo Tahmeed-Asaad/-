@@ -16,7 +16,7 @@ You'll be making your own copy of the "personal website starter" repository so y
 
 Once you've found a home for your forked repository, it's yours. You're the owner, so you're ready to publish, if you wish.
 
-### Install in your local development environment
+### Install in your local development environment 
 
 If you want to manage your website in a local web development environment, you'll be using [Ruby](https://jekyllrb.com/docs/installation/).
 
