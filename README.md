@@ -22,7 +22,7 @@ If you want to manage your website in a local web development environment, you'l
 
 Once you've found a home for your forked repository, **[clone it](https://help.github.com/articles/cloning-a-repository/)**.
 
-#### Install Jekyll
+#### Install Jekyll 
 
 Jekyll is a [Ruby Gem](https://jekyllrb.com/docs/ruby-101/#gems) that can be installed on most systems.
 
