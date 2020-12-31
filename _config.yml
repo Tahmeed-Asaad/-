@@ -52,9 +52,10 @@ social_media:
   # youtube: your_username
 
 topics:
-  -name: Time Series Analysis
-   web_url: https://towardsdatascience.com/the-complete-guide-to-time-series-analysis-and-forecasting-70d476bfe775
-   image_url: https://camo.githubusercontent.com/d68e58faa96a0d4e7af3ae0c1c427dfbcac42ec73f05d7a2ecef99bf1543be45/68747470733a2f2f63312e736664637374617469632e636f6d2f636f6e74656e742f64616d2f626c6f67732f63612f426c6f67253230506f7374732f73616c65732d666f726563617374696e672d6865616465722e6a7067
+
+  - name: Time Series Analysis
+    web_url: https://towardsdatascience.com/the-complete-guide-to-time-series-analysis-and-forecasting-70d476bfe775
+    image_url: https://camo.githubusercontent.com/d68e58faa96a0d4e7af3ae0c1c427dfbcac42ec73f05d7a2ecef99bf1543be45/68747470733a2f2f63312e736664637374617469632e636f6d2f636f6e74656e742f64616d2f626c6f67732f63612f426c6f67253230506f7374732f73616c65732d666f726563617374696e672d6865616465722e6a7067
    
   - name: CSS
     web_url: https://github.com/topics/css
