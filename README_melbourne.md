@@ -1,61 +1,51 @@
-# Bertelsmann-Arvato-Project
+# airbnb-data-analysis
+Analysis of AirBNB data for Boston and Oakland.
 
 ### Table of Contents
-1. [Blog Post](https://rahulgupta1.medium.com/customer-segmentation-report-for-arvato-financial-services-e2f03f149f96)
-2. [Project Overview](#overview)
-3. [The Process](#process)
-4. [File Descriptions](#files)
-5. [Licensing, Authors, and Acknowledgements](#license)
 
-Here is the link for the blog post on medium. [report](https://rahulgupta1.medium.com/customer-segmentation-report-for-arvato-financial-services-e2f03f149f96)
+1. [Installation](#installation)
+2. [Project Motivation](#motivation)
+3. [File Descriptions](#files)
+4. [Results](#results)
+5. [Licensing, Authors, and Acknowledgements](#licensing)
 
-## Project Overview<a name="overview"></a>
-The objective of the project is to determine the chances that a person from mailout campaign could become a new customer.
+## Installation <a name="installation"></a>
 
-The project is divided into several subtasks:
-1.	Data Analysis and Preprocessing;
-2.	Customer Segmentation Report;
-3.	Supervised Learning Predictive Model;
-4.	Kaggle Competition;
+In order to run the analysis code you will need the standard libraries included within the Anaconda distribution of Python. The code should run with no issues using Python versions 3.*.
 
-The training data is protected under the Terms and Conditions and is unavailable for public sharing.
+In order to run the analysis you will also need to download and install [nltk](https://www.nltk.org/data.html), [spacy](https://spacy.io/) (specifically module en_core_web_sm) and [TextBlob](https://textblob.readthedocs.io/en/dev/).
 
-## The Process <a name="process"></a>
+To visualise the analysis of words used the listings and reviews data you will need to download scattertext from [here](https://pypi.org/project/scattertext/0.0.2.6.0/) and install wordcloud (using pip install wordcloud).
 
-1. Customer Segmentation Report
-You'll begin the project by using unsupervised learning methods to analyze attributes of established customers and the general population in order to create customer segments.
+## Project Motivation<a name="motivation"></a>
 
-2. Supervised Learning Model
-You'll have access to a third dataset with attributes from targets of a mail order campaign. You'll use the previous analysis to build a machine learning model that predicts whether or not each individual will respond to the campaign.
+For this project, I was interestested in analyzing data from AirBnB homes located in Boston, MA and Oakland, CA to discover trends in how both hosts and customers use Airbnb, and whether these translate in different areas of the United States. Specifically, I looked at the following questions:
 
-3. Kaggle Competition
-Once you've chosen a model, you'll use it to make predictions on the campaign data as part of a Kaggle Competition. You'll rank the individuals by how likely they are to convert to being a customer, and see how your modeling skills measure up against your fellow students.
+1. What are the most common words used to describe a listing? Are the same words used to describe Boston and Oakland homes?
+2. How many days a year do homeowners make their homes available to rent? How does this compare between Boston and Oakland?
+3. How much do people charge to rent their homes (on average, minimum, maximum)? How does this compare between Boston and Oakland?
+4. Are there seasonality components or price spiking components for how hosts set their home prices? How does this compare between Boston and Oakland?
+5. Are there any property-specific amenities (i.e. Wi-Fi, TV, kitchen) that can help predict price? Which of these have the strongest influence on price? How does this compare between Boston and Oakland?
+6. How many reviews do homes tend to get? What are common words used in reviews and are they primarily positive or negative? How does this compare between Boston and Oakland?
 
 ## File Descriptions <a name="files"></a>
 
-Data is provided by Bertelsmann Arvato
-* `Udacity_AZDIAS_052018.csv`
-* `Udacity_CUSTOMERS_052018.csv`
-* `Udacity_MAILOUT_052018_TRAIN.csv`
-* `Udacity_MAILOUT_052018_TEST.csv`
+The following are the files available in this repository:
 
-2 more files for describing attributes:
-* `DIAS Attributes - Values 2017.xlsx`
-* `DIAS Information Levels - Attributes 2017.xlsx`
+- airbnb_project_analysis.ipynb - a notebook of the analysis performed following the CRISP-DM process
 
-## Results <a name="results"></a>
+- calendar_boston.csv and calendar_oakland.csv - csv files containing listing_id, date, availability, and price for each home
 
-The final predictions were made on the Udacity_MAILOUT_052018_TEST.csv. The score of the final performance of my model was 0.7859. 
+- listings_boston.csv and listings_oakland.csv - csv files containing information about each listing and host, such as property type, description, location, and amenities.
 
-## Licensing, Authors, Acknowledgements <a name="license"></a>
-This web application was developed as part of the [Udacity Data Scientist Nanodegree](https://www.udacity.com/course/data-scientist-nanodegree--nd025).
+- reviews_boston.csv and reviews_oakland.csv - csv files containing the listing_id, date of review and reviewer comments for the reviewed bookings.
 
-I would like to thank Bertelsmann Arvato Analytics for providing the data used for this project and for all the mentors at Udacity.
+- AirBnB_listing_desc_words.html - html file containing interactive scattertext plot of common words used in the description of listings in Boston and Oakland.
 
-Author: Rahul Gupta Copyright 2021
+## Results<a name="results"></a>
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The main findings of the code can be found at the blog post available [here](https://greg-jones.medium.com/can-you-predict-the-price-of-your-next-airbnb-4ac7d073dde9).
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Must give credit to AirBnB for the data.  You can find the Licensing for the data and other descriptive information for the Boston and Oakland data on AirBnB [here](http://insideairbnb.com/get-the-data.html).
