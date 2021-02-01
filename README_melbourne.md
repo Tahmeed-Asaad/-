@@ -1,11 +1,47 @@
-Astute Udacity Learner,
+# Disaster Response Pipeline Project
 
-Great job on this submission. The structure of this project is already impressive and you've done a great job with most of the specifications. ![:clap:](https://lh3.googleusercontent.com/F18bHIKx1pWo_aiDuSyMeGk2rbMSbACvAten58hBK85E5Fz8wShPko_IgilskD3Gs6zDiBKImyFaT4vAIv6yUXHR06BLBtAR9GjrKk5tXURlnR41v6q92yNzXc1ydKMSrQKFcbC4 ":clap:")  ![:clap:](https://lh4.googleusercontent.com/ahU2Qrff6RW1jDy9H5pn-wqIwVT4wsE1Nz8RILhbFL7yVarreOveEWtvtxIRInqm5VG20qVnAts2na1r3D65psLN7h7yFJUsFVWfyBFyZ53B5HUS-qPh1KbzITADS4-ZKy8syIV1 ":clap:")  ![:clap:](https://lh5.googleusercontent.com/Pn-aD9BK-Q49MyTvtzUeyUp3vESEr1xti7yPzoQfReC2WEyCWSMkvGQ4C5dfkLk0iF_VZQBPonf7n0jsWvvT88hgB687NemlUXF4wuzdiiz5aPQ4YLe7ZBphwXrUXdwiaedaCMcG ":clap:")
+This is a projetct is a END-TO-END pipeline to creat a machine learning project
+with a front-end interface to used.
 
-You've made a great effort in your work in the project! Your submission is almost there in terms of meeting specifications, but there are a few issues that need to be revised before the project can pass all rubric points. I believe that it would take very little time for you to make the adjustments.
 
-Don't get upset or disappointed, you did a great job which deserves a big compliment, think that those changes are a great opportunity to learn more and perfect your skills.
 
-I wish you good luck with your Nanodegree. Looking forward to your next submission.
+### Instructions:
 
-Stay Udacious and stay safe! ![:smiley:](https://lh3.googleusercontent.com/Ssk5tabo4pl_wAbd-dLFjgbj2FXviO0-pepBsaamQM1FsAQN1JgMUFauxHIYgWzCNdDHRI9GwfoGawnBJrwOy49kRNQsd8v1yEQz2uaGXrFNKAyl15Bgeva_fc1r0F2Qr4CHrjhk ":smiley:")
+## 1. Virtualenv
+
+create virtualenv
+```
+python3 -m venv .env
+source .env/bin/activate
+```
+
+install requirements
+
+```
+pip install -r requirements.txt
+```
+
+
+## 2. Run projetct
+
+1. Run the following commands in the project's root directory to set up your database and model.
+
+    - To run ETL pipeline that cleans data and stores in database
+        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+    - To run ML pipeline that trains classifier and saves
+        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+
+2. Run the following command in the app's directory to run your web app.
+    `python app/run.py`
+
+3. Go to http://0.0.0.0:3001/
+
+# Example Web
+
+## Intro page
+
+![intro](./image/intro.png)
+
+## Example output
+
+![return](./image/pesquisa.png)
