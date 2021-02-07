@@ -1,32 +1,51 @@
-# airbnb_data_analysis
+# Disaster Response Pipeline Project
 
-This is a project about airbnb data understanding, data preparation, data cleaning and data modeling
+<<<<<<< HEAD
+![header](refs/DR_main_header.png)
 
-## Results<a name="results"></a>
+=======
+>>>>>>> 06a0f5301411fe81c27428356de50caad9916749
+## Project Description
+As part of the udacity nano degree course, this project aims to categorize text using Natural 
+language Processing (NLP). The intention and motivation of the project is to classify the text 
+as soon as it comes in (realtime). 
 
-The main findings of the code can be found at the post available [here](https://hpjhc.medium.com/how-to-become-a-good-earner-in-airbnb-1e917a825db9).
+<<<<<<< HEAD
+![image](refs/DR_overview.png)
 
-## Installation <a name="installation"></a>
-Python versions 3.* in anaconda env with neccesary libraries list below:
+=======
+>>>>>>> 06a0f5301411fe81c27428356de50caad9916749
+this exercise showcases data science skills within an end to end proess. from data cleaning to deployment.
+which can be summarized as below:
 
-- [NumPy](http://www.numpy.org/)
-- [SciPy](https://www.scipy.org/)
-- [Pandas](http://pandas.pydata.org)
-- [matplotlib](http://matplotlib.org/)
-- [seaborn](https://seaborn.pydata.org/)
-- [scikit-learn](http://scikit-learn.org/stable/)
+the project has 3 parts 
+1. ETL(Extract - Transform - Load)
+2. ML (machine learning)
+3. Deployment 
+
+## Installation
+required to install dependencies with a minimum of python 3.6+ including the list of dependencies below:
+
+### Dependencies 
+1. nltk 
+2. sqlalchemy
+3. pickle
+4. flask
+5. plotly
+6. sklearn libraries (pipeline, randomforest classifier)
+
+### User installation
+clone repo and unzip data.
+
+run python ../app/run.py to start server 
+
+once server is running, go to url. 0.0.0.0:3001
+
+## Changelog
+all changes are logged within this repo.
+
+## License 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-## Project Motivation<a name="motivation"></a>
 
-For this project, I was interestested in using Seattle Airbnb data from 2016 to better understand:
-
-1. What time of year has the highest rental prices?
-2. What factors have an influence on booking price ?
-3. How well can we predict an host price?
-4. What aspects correlate well to host earnings?
-
-
-## Licensing, Authors, Acknowledgements<a name="licensing"></a>
-
-Must give credit to Airbnb for the data.  You can find the Licensing for the data and other descriptive information at the Kaggle link available [here](https://www.kaggle.com/airbnb/seattle).  Otherwise, feel free to use the code here as you would like! 
