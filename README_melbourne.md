@@ -1,51 +1,30 @@
 # Disaster Response Pipeline Project
 
-<<<<<<< HEAD
-![header](refs/DR_main_header.png)
-
-=======
->>>>>>> 06a0f5301411fe81c27428356de50caad9916749
-## Project Description
-As part of the udacity nano degree course, this project aims to categorize text using Natural 
-language Processing (NLP). The intention and motivation of the project is to classify the text 
-as soon as it comes in (realtime). 
-
-<<<<<<< HEAD
-![image](refs/DR_overview.png)
-
-=======
->>>>>>> 06a0f5301411fe81c27428356de50caad9916749
-this exercise showcases data science skills within an end to end proess. from data cleaning to deployment.
-which can be summarized as below:
-
-the project has 3 parts 
-1. ETL(Extract - Transform - Load)
-2. ML (machine learning)
-3. Deployment 
-
-## Installation
-required to install dependencies with a minimum of python 3.6+ including the list of dependencies below:
-
-### Dependencies 
-1. nltk 
-2. sqlalchemy
-3. pickle
-4. flask
-5. plotly
-6. sklearn libraries (pipeline, randomforest classifier)
-
-### User installation
-clone repo and unzip data.
-
-run python ../app/run.py to start server 
-
-once server is running, go to url. 0.0.0.0:3001
-
-## Changelog
-all changes are logged within this repo.
-
-## License 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Github repository
+https://github.com/zohir/Disaster-Response-Pipelines
 
 
+### Instructions:
+1. Run the following commands in the project's root directory to set up your database and model.
+
+    - To run ETL pipeline that cleans data and stores in database
+        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+    - To run ML pipeline that trains classifier and saves
+        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+
+2. Run the following command in the app's directory to run your web app.
+    `python run.py`
+
+3. Go to http://0.0.0.0:3001/
+
+
+### LIBRARIES:
+  - python=3.6.12
+  - numpy=1.12.1
+  - pandas=0.23.3
+  - plotly=4.14.3
+  - scikit-learn=0.19.1
+  - sqlalchemy=1.1.13
+  - pickleshare=0.7.5
+  - flask=1.1.2
 
