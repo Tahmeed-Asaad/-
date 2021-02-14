@@ -1,36 +1,34 @@
-## Project 1 - Blog Post
+# Disaster Response Pipeline Project
 
 ### Project Motivation
-Project developed to allow us try to understand what features can be added to Boston Airbnb units in order to increase the unit prices, more specifically
+Normally, in disaster scenarios there is to quickly classify messages coming from the various sources.
+This allows humanitarian organization to have better and faster responses.
 
-- What amenities could owners add/improve on their units to allow them to increase the prices within their pricing groups? **(AmenitiesAnalysis.ipynb)**
-- What is the relation between the different pricing groups and the number of reviews and reviews scores? **(ReviewsAnalysis.ipynb)**
-- Can we have a regression model that allows us to predit the unit price for Boston? **(PriceModel.ipynb)**
+This Web App that allows users to classify automatically messages coming from disaster scenarios using a simple RandomForest 
+classification model.
+
+There are two more pages that allow users to verify the training data by:
+- Genre
+- Category
 
 ### Structure
-- **AmenitiesAnalysis.ipynb**: Code used to do the Amenities/Price analysis.
-- **PriceModel.ipynb**: Code used to do the Price Linear Regression Model.
-- **ReviewsAnalysis.ipynb**: Code used to do the Reviews/PricingGroup analysis.
-- **common.py**: File contaning some common functions.
-- **data/boston/listings.csv**: Copy of the Boston listings data provided by [InsideAirbnb](http://insideairbnb.com/get-the-data.html).
+- **data/**: Contains code to store, load messages internally.
+- **models/**: Contains the code for models.
+- **app/**: Contains all the code for the WebApplication.
+- **resources/**: Notebooks used to support the development.
 
-### Libraries
-- Python3
-- Conda3
-- Jupyter Notebooks
-- numpy
-- pandas
-- matplotlib
-- sklearn
-- seaborn
-- scipy
+### Instructions:
+1. Run the following commands in the project's root directory to set up your database and model.
 
-### Results
-The main findings of the code can be found at the post available [here](https://pedrogandola.blogspot.com/2020/12/how-to-increase-airbnb-unit-price.html).
+    - To run ETL pipeline that cleans data and stores in database
+        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+    - To run ML pipeline that trains classifier and saves
+        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
+2. Run the following command in the app's directory to run your web app.
+    `python run.py`
 
-### License
-The InsideAirbnb dataset contained in this project has the license: [Creative Commons CC0 1.0 Universal (CC0 1.0) "Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/)
+3. Go to http://0.0.0.0:3001/
 
-### Acknowledgements
-The data used on this project is kindly provided by [InsideAirbnb](http://insideairbnb.com/get-the-data.html).
+### Run Tests:
+    `python test`
