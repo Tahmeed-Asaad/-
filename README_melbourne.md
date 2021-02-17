@@ -1,34 +1,49 @@
-# Disaster Response Pipeline Project
+# Covid-Blog-Post
+Blog post for Udacity 'Write A Data Science Blog Post' assignment.
 
-### Project Motivation
-Normally, in disaster scenarios there is to quickly classify messages coming from the various sources.
-This allows humanitarian organization to have better and faster responses.
+You can read the actual blog post [here](https://stigant.github.io/Blog/2021/02/14/Covid.html).
 
-This Web App that allows users to classify automatically messages coming from disaster scenarios using a simple RandomForest 
-classification model.
+<h2> Motiviations </h2>
 
-There are two more pages that allow users to verify the training data by:
-- Genre
-- Category
+We've lived with covid for about a year now. As disastrous as it has been, it has also demonstrated the power of data in responding to real world situations. Our ability to fight covid has depended as much on our ability to collect and understand relevant data, using it to inform our actions, as it has on our health systems. This seemed like a natural place then to start a data science journey. Plus it fits the relevancy criteria laid out for being a good blog post. The questions I posed were simply the ones I thought would be interesting and doable with the time and data available to me.
 
-### Structure
-- **data/**: Contains code to store, load messages internally.
-- **models/**: Contains the code for models.
-- **app/**: Contains all the code for the WebApplication.
-- **resources/**: Notebooks used to support the development.
+<h2> Files </h2>
 
-### Instructions:
-1. Run the following commands in the project's root directory to set up your database and model.
+The repo contains three csv files containing relevant data, sourced as described below.
 
-    - To run ETL pipeline that cleans data and stores in database
-        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
-    - To run ML pipeline that trains classifier and saves
-        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+The main body of work is a Jypiter notebook. This contains the code used to answer the three questions posed in the blog post. The methods used were essentially inbuilt, but there are functions written to simplify some tasks and allow for experimenation. Most notably is pipe, this takes
 
-2. Run the following command in the app's directory to run your web app.
-    `python run.py`
+* a DataFrame
+* a target variable, target=str
+* a list of predictor variables, predictors=[str]
+* a list of categories to include historical data for, trailing =[str] - This should be a sublist of predictors
+* a furthest day from which to include data either one integer or one per category, trail_n=int or [int]
+* a closest day from which to include data either one integer or one per category, trail_to=int or [int]
+* a smoothing level - if non-zero replace the target data with the n day trailing average, smooth=int
+* a date range to work on, cutoffs=(date,date) - used with an loc call on dateTime index must be in an appropriate format
 
-3. Go to http://0.0.0.0:3001/
+In spits out, in this order:
+* Target and prediction data combined as a DataFrame
+* Prediction variables
+* Target data
+* Predicted values
+* a linear model
 
-### Run Tests:
-    `python test`
+The repo also includes the markdown and images for the blog post for completeness but it renders poorly in Github's reader.
+
+<h2> Packages </h2>
+
+All the packages used come in a standard coda installation, besides adjustText. This is available via pip, or you can find the repo 
+[here](https://github.com/Phyla/adjustText/).
+
+
+<h2> Data Acknowledgments </h2>
+
+The covid data all comes from [Our World in Data](https://ourworldindata.org/coronavirus).
+The population density is courtesy of the [World Bank](https://data.worldbank.org/indicator/EN.POP.DNST).
+Data on population weighted density comes from the European Commision's [Joint Research Centre](https://data.jrc.ec.europa.eu/dataset/jrc-luisa-udp-pwd-ref2016).
+
+
+
+
+
