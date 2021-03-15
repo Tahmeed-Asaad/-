@@ -1,48 +1,125 @@
-[//]: # (Image References)
+<!-----
+NEW: Check the "Suppress top comment" option to remove this info from the output.
 
-[image1]: https://user-images.githubusercontent.com/10624937/42135623-e770e354-7d12-11e8-998d-29fc74429ca2.gif "Trained Agent"
-[image2]: https://user-images.githubusercontent.com/10624937/42135622-e55fb586-7d12-11e8-8a54-3c31da15a90a.gif "Soccer"
+Conversion time: 0.716 seconds.
 
 
-# Project 3: Collaboration and Competition
+Using this Markdown file:
 
-### Introduction
+1. Paste this output into your source file.
+2. See the notes and action items below regarding this conversion run.
+3. Check the rendered output (headings, lists, code blocks, tables) for proper
+   formatting and use a linkchecker before you publish this page.
 
-For this project, you will work with the [Tennis](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis) environment.
+Conversion notes:
 
-![Trained Agent][image1]
+* Docs to Markdown version 1.0β29
+* Sun Mar 14 2021 17:49:05 GMT-0700 (PDT)
+* Source doc: Udacity Project one Data Model PostgreSQL Readme
+* This document has images: check for >>>>>  gd2md-html alert:  inline image link in generated source and store images to your server. NOTE: Images in exported zip file from Google Docs may not appear in  the same order as they do in your doc. Please check the images!
 
-In this environment, two agents control rackets to bounce a ball over a net. If an agent hits the ball over the net, it receives a reward of +0.1.  If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01.  Thus, the goal of each agent is to keep the ball in play.
+----->
 
-The observation space consists of 8 variables corresponding to the position and velocity of the ball and racket. Each agent receives its own, local observation.  Two continuous actions are available, corresponding to movement toward (or away from) the net, and jumping. 
 
-The task is episodic, and in order to solve the environment, your agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). Specifically,
+<p style="color: red; font-weight: bold">>>>>>  gd2md-html alert:  ERRORs: 0; WARNINGs: 0; ALERTS: 1.</p>
+<ul style="color: red; font-weight: bold"><li>See top comment block for details on ERRORs and WARNINGs. <li>In the converted Markdown or HTML, search for inline alerts that start with >>>>>  gd2md-html alert:  for specific instances that need correction.</ul>
 
-- After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.
-- This yields a single **score** for each episode.
+<p style="color: red; font-weight: bold">Links to alert messages:</p><a href="#gdcalert1">alert1</a>
 
-The environment is considered solved, when the average (over 100 episodes) of those **scores** is at least +0.5.
+<p style="color: red; font-weight: bold">>>>>> PLEASE check and correct alert issues and delete this message and the inline alerts.<hr></p>
 
-### Implemented method
 
-We have used ddpg agent to solve this environment and solved the environment in 100 episodes with Average score 0.509. More details the learning algorithm, along with the chosen hyper parameters is mentioned in Report.md. It also describes the model architectures for neural networks.
+**Project One: Data Modelling with Postgres**
 
-### Getting Started
 
-1. To set up your Python environment correctly follow [this link](https://github.com/udacity/deep-reinforcement-learning#dependencies).
 
-2. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
-    - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
-    - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip)
-    - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86.zip)
-    - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip)
+*   Create Postgres Database and Tables: **python create_tables.py**
+    *   If tables already exist they will be dropped and new tables will be created
+*   Insert data into tables: **python etl.py**
+    *   Extracts and processes JSON data and then inserts processed data into Database
+*   etl.py
+
+ 
+
+**Overview**
+
+This project builds an ETL pipeline for a music streaming service called Sparkify by fetching data from JSON files, processing the data, and inserting the data into a PostgreSQL Database. This project provides Sparkify with tools to analyze song and user data to answer questions like “What songs are our customers listening to?”
+
+**Technologies used**
+
+
+
+*   Python - automate the ETL process into DB
+*   Jupyter Notebook
+    *   Used to develop and test code for etl.py
+    *   Etl.ipynb: Notebook used to develop and run code for etl.py
+    *   Test.ipynb: Used to run test SQL queries on the Postgresql database
+*   SQL 
+    *   used to create database and tables. 
+    *   Used to JOIN data to insert data into songplays table
+    *   Used to run ad-hoc queries to discover insight about the data sets
+*   Postgresql Database
+
+**Insights taken from dataset: sql queries in test.ipynb**
+
+
+
+*   ./data/song_data: 71 files : contains information on songs and artist tables
+*   ./data/log_data: 30 files : contains information on time and user tables
+*   Songplays table requires JOIN of data from /data/log_data and /data/song_data
+*   Unique Users: 97
+*   Songs: 71
+*   Artists: 69
+*   Songplays: 6820
+*   Most Popular Day to Stream: Wednesday With a count of 1364
+*   Least Popular Day to Stream: Sunday With a count of 396
+
+    **Database**
+
+
+    The Sparkify analytics database (SparkifyDB) is a Star Schema design. The star schema separates business process data into facts, which hold the measurable, quantitative data about a business, and dimensions which are descriptive attributes related to fact data. 
+
+
+    **Entity Relationship Diagram (ERD)**
+
+
     
-    (_For Windows users_) Check out [this link](https://support.microsoft.com/en-us/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64) if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
 
-    (_For AWS_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux_NoVis.zip) to obtain the "headless" version of the environment.  You will **not** be able to watch the agent without enabling a virtual screen, but you will be able to train the agent.  (_To watch the agent, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
+<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-3. Place the file in the DRLND GitHub repository, in the `p3_collab-compet/` folder, and unzip (or decompress) the file. 
 
-### Instructions
+![alt_text](images/image1.png "image_tooltip")
 
-Follow the instructions in `Tennis.ipynb` to get started with training your own agent!  
+
+
+
+#### **Fact Table**
+
+
+
+1. **songplays** - records in log data associated with song plays i.e. records with page NextSong
+    *   _songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent_
+
+
+#### **Dimension Tables**
+
+
+
+*   **users** - users in the app
+    *   _user_id, first_name, last_name, gender, level_
+*   **songs** - songs in music database
+    *   _song_id, title, artist_id, year, duration_
+*   **artists** - artists in music database
+    *   _artist_id, name, location, latitude, longitude_
+*   **time** - timestamps of records in **songplays** broken down into specific units
+    *   _start_time, hour, day, week, month, year, weekday_
+
+**_File Descriptions_**
+
+
+
+*   test.ipynb displays the first few rows of each table to let you check your database.
+*   create_tables.py drops and creates your tables. You run this file to reset your tables before each time you run your ETL scripts.
+*   etl.ipynb reads and processes a single file from song_data and log_data and loads the data into your tables. This notebook contains detailed instructions on the ETL process for each of the tables.
+*   etl.py reads and processes files from song_data and log_data and loads them into your tables. 
+*   sql_queries.py contains all your sql queries, and is imported into the last three files above.
