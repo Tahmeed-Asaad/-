@@ -1,24 +1,50 @@
-# Write-a-data-science-blog-post
-Project in Data Scientist Nanodegree of Udacity
-##Table of Contents
-1.	[Installation](#Installation)
-2.	[Project Motivation](#Motivation)
-3.	[File Descriptions](#Files)
-4.	[Results](#Results)
-5.	[Licensing, Authors, and Acknowledgements](#licencing)
+# Udacity_Project1
+Python code to evaluate how amenities may impact booked percentage, as well as which additional features may make your listing more successful
 
-## Installation<a name ="installation"></a>
-There should be no necessary libraries to run the code here beyond the Anaconda distribution of Python. The code should run with no issues using Python versions 3.*.
+# Requirements
+- numpy
+- pandas
+- matplotlib
+- sklearn
 
-## Project Motivation<a name ="project motivation"></a>
-The StackOverflow Survey 2017
-1.	DOES SALARY HAVE AN EFFECT ON CAREER SATISFACTION?
-2.	DO YOU NEED TO ATTEND A UNIVERSITY BEFORE BECOMING A SUCCESSFUL SOFTWARE DEVELOPER?
-3.	HOW EFFECTIVE IS WORKING REMOTELY AS A SOFTWARE DEVELOPER?
-4.	PERCENTAGE OF SUCCESSFUL FEMALE SOFTWARE DEVELOPER USING CAREERSATISFACTION AND SALARY AS METRICS¶
-## File Descriptions<a name ="Descriptions"></a>
-The notebook available [here]
-## Results<a name ="Results"></a>
-The main findings of the code can be found at the post available [here](https://seunayorinde.medium.com/would-a-university-degree-make-me-successful-as-a-software-developer-729399804083)
-## Licensing, Authors, Acknowledgements
-Credits are given to Kaggle and Stackoverflow for the dataset used in this project.
+# Project Motivation
+This project is designed to show what additional amenities an airbnb owner could add to their property in order to increase the percentage of time their listing is booked.
+
+# Top Amenities
+The top amenities project will look to answer both "What are the essential amenities a listing should include" as well as "What additional amenities may improve the percent of time booked.
+The first segment will show which amenities are essential by providing a list of how often different features are included in listings
+The second segment will look at which specific amenities correlate most to higher booking percentages.
+
+# Top Features
+The third question we are looking to answer is "What additional features correlate to higher booking percentages"
+The "Top Requirements for frequent booking" file will evaluate this using a test/train model.
+
+# Results
+The Top Amenities analysis shows that the top 10 amenities for a succesfull airbnb are:
+  - Internet
+  - Wireless Internet
+  - Heating
+  - Kitchen
+  - Smoke Detector
+  - Essentials
+  - Dryer
+  - Washer
+  - Shampoo
+  - Carbon Monoxide Detector
+ These are considered to be essential in the listing of you property to be competitied
+ 
+ The second analysis was to determine which, if any, additional amenities contributed to a higher percentage of available days booked.
+ The results of this point to an increase in bookings with amenities focused on accessibility and safety
+ The most impact full additional amenities are:
+ - Wheelchair accessible
+ - lock on bedroom door
+ - elevator in building
+ - Buzzer/Wireless Intercom
+ - Doorman
+ - Safety Card
+
+We also wanted to look at what additional features in a listing contribute to a higher percentage of days booked.
+Our top features are as follows:
+- Type of room: Private Room
+- Type of bed: Real Bed
+- Property Type: House
