@@ -1,50 +1,30 @@
-# Udacity_Project1
-Python code to evaluate how amenities may impact booked percentage, as well as which additional features may make your listing more successful
+# Starbucks_Capstone
+Starbucks Capstone Challenge
 
-# Requirements
-- numpy
-- pandas
-- matplotlib
-- sklearn
+## Quick overview
+The main challenge of this project is to "learn from the past" regading which has been the most successful offer for a particular profile of user that will be determined by a decision tree model using, as features, demographics and average transaction amount.  
+The Introduction in the jupyter notebook and the blog in https://medium.com/@eva-marchetti/learning-from-customers-response-to-offers-ed7553e0b931 will explain the challenge in more details
+## How to run the jupiter notebook
+The whole notebook is based on three datastes provided by Starbucks and available in this repository in the zip file
+- portfolio.json
+- profile.json
+- transcript.json
 
-# Project Motivation
-This project is designed to show what additional amenities an airbnb owner could add to their property in order to increase the percentage of time their listing is booked.
+You will need to extract and save the files in the zip file.  
+Then, in the first code cell in the jupiter notebook (Importing the necessary libraries and files), particularly in the code:  
+  
+portfolio = pd.read_json('data/portfolio.json', orient='records', lines=True)  
+profile = pd.read_json('data/profile.json', orient='records', lines=True)  
+transcript = pd.read_json('data/transcript.json', orient='records', lines=True)  
+<br>
+You need to make sure that the path to the json files is aligned with the path in your enviroment for the code to actually find the files.  
+<br>
+Since we are importing json files, you may need to update your pandas version in order to read json file correctly.  
+If you need to do so, from a jupyter notebook workspace, you can go to the terminal and run the command conda update pandas before reading in the files.  
+You can see how to access the terminal and how the install works using the two images below. First you need to access the terminal:  
+![Terminal](/image/pic1.png)
 
-# Top Amenities
-The top amenities project will look to answer both "What are the essential amenities a listing should include" as well as "What additional amenities may improve the percent of time booked.
-The first segment will show which amenities are essential by providing a list of how often different features are included in listings
-The second segment will look at which specific amenities correlate most to higher booking percentages.
+Then you will want to run the above command:  
+![command](/image/pic2.png)
 
-# Top Features
-The third question we are looking to answer is "What additional features correlate to higher booking percentages"
-The "Top Requirements for frequent booking" file will evaluate this using a test/train model.
-
-# Results
-The Top Amenities analysis shows that the top 10 amenities for a succesfull airbnb are:
-  - Internet
-  - Wireless Internet
-  - Heating
-  - Kitchen
-  - Smoke Detector
-  - Essentials
-  - Dryer
-  - Washer
-  - Shampoo
-  - Carbon Monoxide Detector
- These are considered to be essential in the listing of you property to be competitied
- 
- The second analysis was to determine which, if any, additional amenities contributed to a higher percentage of available days booked.
- The results of this point to an increase in bookings with amenities focused on accessibility and safety
- The most impact full additional amenities are:
- - Wheelchair accessible
- - lock on bedroom door
- - elevator in building
- - Buzzer/Wireless Intercom
- - Doorman
- - Safety Card
-
-We also wanted to look at what additional features in a listing contribute to a higher percentage of days booked.
-Our top features are as follows:
-- Type of room: Private Room
-- Type of bed: Real Bed
-- Property Type: House
+Finally, when you enter back into the notebook (use the jupyter icon again), you should be able to import the json files correctly.
