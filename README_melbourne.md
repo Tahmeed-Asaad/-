@@ -1,30 +1,128 @@
-# Starbucks_Capstone
-Starbucks Capstone Challenge
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-## Quick overview
-The main challenge of this project is to "learn from the past" regading which has been the most successful offer for a particular profile of user that will be determined by a decision tree model using, as features, demographics and average transaction amount.  
-The Introduction in the jupyter notebook and the blog in https://medium.com/@eva-marchetti/learning-from-customers-response-to-offers-ed7553e0b931 will explain the challenge in more details
-## How to run the jupiter notebook
-The whole notebook is based on three datastes provided by Starbucks and available in this repository in the zip file
-- portfolio.json
-- profile.json
-- transcript.json
 
-You will need to extract and save the files in the zip file.  
-Then, in the first code cell in the jupiter notebook (Importing the necessary libraries and files), particularly in the code:  
-  
-portfolio = pd.read_json('data/portfolio.json', orient='records', lines=True)  
-profile = pd.read_json('data/profile.json', orient='records', lines=True)  
-transcript = pd.read_json('data/transcript.json', orient='records', lines=True)  
-<br>
-You need to make sure that the path to the json files is aligned with the path in your enviroment for the code to actually find the files.  
-<br>
-Since we are importing json files, you may need to update your pandas version in order to read json file correctly.  
-If you need to do so, from a jupyter notebook workspace, you can go to the terminal and run the command conda update pandas before reading in the files.  
-You can see how to access the terminal and how the install works using the two images below. First you need to access the terminal:  
-![Terminal](/image/pic1.png)
 
-Then you will want to run the above command:  
-![command](/image/pic2.png)
+<!-- TABELA DE CONTEÚDOS -->
+<details open="open">
+  <summary>Summary</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About the Project</a>
+      <ul>
+        <li><a href="#built-with">Frameworks</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Pre Requisites</a></li>
+      </ul>
+    </li>
+    <li><a href="#run">Running</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Reference</a></li>
+  </ol>
+</details>
 
-Finally, when you enter back into the notebook (use the jupyter icon again), you should be able to import the json files correctly.
+
+
+<!-- ABOUT THE PROJECT -->
+## About the project
+
+The objective of this project is to create a machine learning pipeline to categorize disaster events, through messages raised from people asking for help. These messages are sorted into categories such as Security, Fire, Military, etc.The project includes a web app where an emergency worker can input a new message and get classification results. This classification in a quickly way will help the emergency workers to address the needed support more efficiently and also display visualizations about the data. 
+
+### Frameworks
+
+To run the notebook, it is necessary to install the following frameworks:
+
+* [Scikit Learn](https://scikit-learn.org/)
+* [Pandas](https://pandas.pydata.org/)
+* [Numpy](https://numpy.org/)
+* [Sqlalchemy](https://www.sqlalchemy.org/)
+* [NLTK - punkt, stopwords](https://www.nltk.org//)
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+* [Matplotlib](https://matplotlib.org/)
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+The notebook was developed in the environment Udacity Workspace IDE
+
+### Prerequisites
+
+The Python version is 3.7+
+
+<!-- RUN -->
+## Running
+
+There are three main folders at the workspace:
+
+<ul>
+<li>data
+  <ul>
+    <li>disaster_categories.csv: dataset including all the categories</li>
+    <li>disaster_messages.csv: dataset including all the messages</li>
+    <li>process_data.py: ETL pipeline to load, clean, and save the merged datasets into a sql database</li>
+    <li>DisasterResponse.db: SQLite database for storage the data
+models</li>
+   </ul>
+<li>models
+    <ul>
+    <li>train_classifier.py: ML pipeline to train and export the model</li>
+    <li>classifier.pkl: ML model created</li>
+    </li>
+    </ul>
+<li>app
+<ul>
+  <li>run.py: Flask file to run the web application</li>
+  <li>templates used for the web application</li>
+  </li>
+</ul>
+</ul>
+
+
+Run the following commands in the project's root directory to set up your database and model:
+
+Run ETL pipeline for data cleansing and stores in sql database: `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+
+Run ML pipeline to create the model: `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+
+Go to app folder (cd app) and run the following command : `python run.py`
+
+Open the browser using the url http://0.0.0.0:3001 (if it doesn't work, find the workspace environmental variables with `env | grep WORK`, and you can open a new browser window and go to the address:`http://WORKSPACESPACEID-3001.WORKSPACEDOMAIN` replacing WORKSPACEID and WORKSPACEDOMAIN with your values)
+
+<!-- ROADMAP -->
+## Roadmap
+
+Retrain the model using others classifiers to improve the accuracy.
+
+Use [GridSearchCV](https://scikit-learn.org/stable/modules/grid_search.html), a cross validation technique for tuning your model.
+
+Balance the data of the database
+
+<!-- CONTACT -->
+## Contato
+
+[Gmail](lecunhad@gmail.com)
+
+[![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/leandro-dias-6a446115a/)
+
+
+<!-- ACKNOWLEDGEMENTS -->
+ 
+ <!--## Referências-->
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+
