@@ -1,128 +1,57 @@
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
-
-
-<!-- TABELA DE CONTEÚDOS -->
-<details open="open">
-  <summary>Summary</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About the Project</a>
-      <ul>
-        <li><a href="#built-with">Frameworks</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Pre Requisites</a></li>
-      </ul>
-    </li>
-    <li><a href="#run">Running</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Reference</a></li>
-  </ol>
-</details>
-
-
-
-<!-- ABOUT THE PROJECT -->
-## About the project
-
-The objective of this project is to create a machine learning pipeline to categorize disaster events, through messages raised from people asking for help. These messages are sorted into categories such as Security, Fire, Military, etc.The project includes a web app where an emergency worker can input a new message and get classification results. This classification in a quickly way will help the emergency workers to address the needed support more efficiently and also display visualizations about the data. 
-
-### Frameworks
-
-To run the notebook, it is necessary to install the following frameworks:
-
-* [Scikit Learn](https://scikit-learn.org/)
-* [Pandas](https://pandas.pydata.org/)
-* [Numpy](https://numpy.org/)
-* [Sqlalchemy](https://www.sqlalchemy.org/)
-* [NLTK - punkt, stopwords](https://www.nltk.org//)
-* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
-* [Matplotlib](https://matplotlib.org/)
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-The notebook was developed in the environment Udacity Workspace IDE
-
-### Prerequisites
-
-The Python version is 3.7+
-
-<!-- RUN -->
-## Running
-
-There are three main folders at the workspace:
-
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<h1><a id="user-content-disaster-response-pipeline-project" class="anchor" aria-hidden="true" href="#disaster-response-pipeline-project"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Disaster Response Pipeline</h1>
+<h2><a id="user-content-project-description" class="anchor" aria-hidden="true" href="#project-description"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Description</h2>
+<p>In this project, we will build a model to classify messages that are sent during disasters. There are 36 pre-defined categories, and examples of these categories include Aid Related, Medical Help, Search And Rescue, etc. By classifying these messages, we can allow these messages to be sent to the appropriate disaster relief agency. This project will involve the building of a basic ETL and Machine Learning pipeline to facilitate the task. This is also a multi-label classification task, since a message can belong to one or more categories. We will be working with a data set provided by <a href="https://www.figure-eight.com/" rel="nofollow">Figure Eight</a> containing real messages that were sent during disaster events.</p>
+<p>Finally, this project contains a web app where you can input a message and get classification results.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="/images/WebApp.PNG"><img src="/images/WebApp.PNG" alt="Screenshot of Web App" style="max-width:100%;"></a></p>
+<h2><a id="user-content-installation" class="anchor" aria-hidden="true" href="#installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Installation</h2>
+<p>Must runing with Python 3 with libraries of numpy, pandas, sqlalchemy, re, NLTK, pickle, Sklearn, plotly and flask libraries.</p>
+<h2><a id="user-content-instructions" class="anchor" aria-hidden="true" href="#instructions"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Quick Start</h2>
+<ol>
+<li><p>Run the following commands in the project's root directory to set up your database and model.</p>
 <ul>
-<li>data
-  <ul>
-    <li>disaster_categories.csv: dataset including all the categories</li>
-    <li>disaster_messages.csv: dataset including all the messages</li>
-    <li>process_data.py: ETL pipeline to load, clean, and save the merged datasets into a sql database</li>
-    <li>DisasterResponse.db: SQLite database for storage the data
-models</li>
-   </ul>
-<li>models
-    <ul>
-    <li>train_classifier.py: ML pipeline to train and export the model</li>
-    <li>classifier.pkl: ML model created</li>
-    </li>
-    </ul>
-<li>app
-<ul>
-  <li>run.py: Flask file to run the web application</li>
-  <li>templates used for the web application</li>
-  </li>
+<li>To run ETL pipeline that cleans data and stores in database
+<code>python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db</code></li>
+<li>To run ML pipeline that trains classifier and saves
+<code>python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl</code></li>
 </ul>
-</ul>
-
-
-Run the following commands in the project's root directory to set up your database and model:
-
-Run ETL pipeline for data cleansing and stores in sql database: `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
-
-Run ML pipeline to create the model: `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
-
-Go to app folder (cd app) and run the following command : `python run.py`
-
-Open the browser using the url http://0.0.0.0:3001 (if it doesn't work, find the workspace environmental variables with `env | grep WORK`, and you can open a new browser window and go to the address:`http://WORKSPACESPACEID-3001.WORKSPACEDOMAIN` replacing WORKSPACEID and WORKSPACEDOMAIN with your values)
-
-<!-- ROADMAP -->
-## Roadmap
-
-Retrain the model using others classifiers to improve the accuracy.
-
-Use [GridSearchCV](https://scikit-learn.org/stable/modules/grid_search.html), a cross validation technique for tuning your model.
-
-Balance the data of the database
-
-<!-- CONTACT -->
-## Contato
-
-[Gmail](lecunhad@gmail.com)
-
-[![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/leandro-dias-6a446115a/)
-
-
-<!-- ACKNOWLEDGEMENTS -->
- 
- <!--## Referências-->
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-
+</li>
+<li>
+<p>Run the following command in the app's directory to run your web app.
+<code>python run.py</code></p>
+</li>
+<li>
+<p>Go to <a href="http://0.0.0.0:3001/" rel="nofollow">http://0.0.0.0:3001/</a></p>
+</li>
+</ol>
+<h2><a id="user-content-file-description" class="anchor" aria-hidden="true" href="#file-description"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>What's included</h2>
+<pre>
+    <code>
+        disaster_response_pipeline
+        |-- app
+            |-- templates
+                    |-- go.html
+                    |-- master.html
+            |-- run.py
+        |-- data
+            |-- disaster_message.csv
+            |-- disaster_categories.csv
+            |-- DisasterResponse.db
+            |-- process_data.py
+        |-- models
+            |-- classifier.pkl
+            |-- train_classifier.py
+        |-- README
+    </code>
+</pre>
+<h2><a id="user-content-file-descriptions" class="anchor" aria-hidden="true" href="#file-descriptions"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>File Descriptions</h2>
+<ol>
+    <li>App folder including the templates folder and "run.py" for the web application</li>
+    <li>Data folder containing "DisasterResponse.db", "disaster_categories.csv", "disaster_messages.csv" and "process_data.py" for data cleaning and transfering.</li>
+    <li>Models folder including "classifier.pkl" and "train_classifier.py" for the Machine Learning model.</li>
+    <li>README file</li>
+    <li>Preparation folder containing 6 different files, which were used for the project building. (Please note: this folder is not necessary for this project to run.)</li>
+</ol>
+<h2><a id="user-content-licensing-authors-acknowledgements" class="anchor" aria-hidden="true" href="#licensing-authors-acknowledgements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Licensing, Authors, Acknowledgements</h2>
+<p>Many thanks to Figure-8 for making this available to Udacity for training purposes. Special thanks to udacity for the training. Feel free to utilize the contents of this while citing me, udacity, and/or figure-8 accordingly.</p>
+</article>
