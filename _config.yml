@@ -25,7 +25,7 @@ projects:
   exclude:
     archived: false
     forks: false
-    projects: "-", "ASP.NET-MVC-Project", "complete-ecommerce-aspnet-mvc-application", "intermediator-bot-sample"
+    projects: "-"
     # - repo-name
 
 social_media:
