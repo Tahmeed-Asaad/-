@@ -22,10 +22,10 @@ projects:
   #   - pushed
   #   - stars
   limit: 10
-  exclude: -
+  exclude:
     archived: false
     forks: true
-    projects:
+    projects: "-"
     # - repo-name
 
 social_media:
